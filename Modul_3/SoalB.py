@@ -29,14 +29,13 @@ def countGenres(movies):
 
 def ratingByYear(movies):
     yearList = {}
-    for movie in movies:
-        year = movie['year']
-        if year not in yearList:
-            yearList[year] = {'total':0, 'count': 0}
-        yearList[year]['total'] += movie['rating']
-        yearList[year]['count'] += 1
-    # rate = {year: data['total']/data['count'] for year, data in yearList.items()}
-    rate = reduce(lambda acc, year_data: {**acc, year_data[0]: year_data[1]['total'] / year_data[1]['count']}, yearList.items())
+    for movie in movies: 
+        if movie['year'] not in yearList:
+            yearList[movie['year']] = {'total':0, 'count': 0}
+        yearList[movie['year']]['total'] += movie['rating']
+        yearList[movie['year']]['count'] += 1
+    rate = {year: data['total']/data['count'] for year, data in yearList.items()}
+    # rate = reduce(lambda acc, year_data: {**acc, year_data[0]: year_data[1]['total'] / year_data[1]['count']}, yearList.items())
     return rate
 
 

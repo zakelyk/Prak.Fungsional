@@ -12,6 +12,8 @@ transactions = [
 # Fungsi untuk menghitung total harga transaksi menggunakan lambda
 calculateTotal = lambda transaction: transaction["price"] * transaction["quantity"]
 
+# print(f"calculateTotal : {calculateTotal}")
+
 # Fungsi untuk menyaring transaksi hanya untuk produk tertentu dengan HoF
 def filterTransactions(product, transactions):
     return list(filter(lambda transaction: transaction["product"] == product, transactions))
@@ -26,7 +28,6 @@ filterInput = input("Masukkan nama produk yang ingin disaring: ")
 # Menggunakan filter() untuk menyaring transaksi sesuai input produk
 filtered = filterTransactions(filterInput, transactions)
 
-# Menampilkan transaksi produk tertentu
 print(f"Transaksi Pembelian Produk {filterInput}:")
 for transaction in filtered:
     print(transaction)
@@ -34,15 +35,18 @@ for transaction in filtered:
 # Menggunakan map() untuk menghitung total harga untuk setiap transaksi yang tersaring
 TCtotals = list(map(calculateTotal, filtered))
 
+# print(f"TCtotals : {TCtotals}")
+
 # Menampilkan total harga untuk setiap transaksi produk tertentu
 print("\nTotal Harga untuk Setiap Transaksi Produk", filterInput + ":")
 for total in TCtotals:
     print(total)
 
 # Menggunakan reduce() untuk menghitung total Pendapatan dari semua transaksi yang tersaring
-revenue = reduce(lambda acc, total: acc + total, TCtotals, 0)
+Total = reduce(lambda x, y: x + y, TCtotals)
+# print(f"revenue : {Total}")
 
 # Menampilkan Total Pendapatan dan Total Jumlah Item Terjual
-print("\nTotal Pendapatan dari Transaksi Produk", filterInput + ":", revenue)
+print("\nTotal Pendapatan dari Transaksi Produk", filterInput + ":", Total)
 totalSold = countSold(filterInput, transactions)
 print("Total Jumlah Item Terjual dari Produk", filterInput + ":", totalSold)
