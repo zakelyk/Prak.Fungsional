@@ -1,0 +1,11 @@
+| Kriteria                                   | Detail Penilaian                                   | Poin | Program identik** |
+|--------------------------------------------|----------------------------------------------------|------|---------------------|
+| Percobaan 1                                | 5 poin per metode run (HOF & currying)             | 10   | 10                |
+| Percobaan 2 & 3                            | 5 poin per percobaan                               | 10   | 10                |
+| Percobaan 4                                | 5 poin per transformasi                            | 15   | 5                 |
+| Percobaan 5 & 6                            | Sesuai dengan contoh (5 poin per percobaan)       | 10   | 5*                |
+|                                            | Berdasarkan nim & disertai perhitungan            | 20   | 10*               |
+| Tugas Praktikum                            | Menggunakan Decorator untuk transformasi gabungan | 15   | 10                |
+|                                            | Menggunakan inputan user untuk semua data         | 10   | 5                 |
+|                                            | Data input berdasarkan nim & disertai perhitungan | 10   | 5                 |
+| Total Nilai (maksimal)                     | -                                                  | 100  | 60                |
